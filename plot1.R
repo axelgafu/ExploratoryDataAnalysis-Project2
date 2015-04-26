@@ -21,15 +21,6 @@ SCC <- readRDS( "Source_Classification_Code.rds" )
 #' to 2008? Using the base plotting system, make a plot showing the total PM2.5 
 #' emission from all sources for each of the years 1999, 2002, 2005, and 2008.
 #' 
-fYear <- factor( NEI$year )
-#plot( NEI$Emissions ~ fYear )
-#plot( NEI$year, NEI$Emissions, main="Emissions per Year", xlab="Year", ylab="Emissions", ylim=c(0, 2e+05) )
-#boxplot( log10( NEI$Emissions ) ~ NEI$year, main="Emissions per Year", xlab="Year", 
-#ylab="log10( Emissions )", notch=TRUE )
-
 png( "plot1.png" )
-#boxplot( log10( NEI$Emissions ) ~ NEI$year, main="Emissions per Year", xlab="Year", ylab="log10( Emissions )", notch=TRUE )
-samp <- sample( NEI$Emissions, length(NEI$Emissions)/10 )
-idx <- NEI$Emissions %in% samp
-boxplot( log10( NEI$Emissions[idx] ) ~ NEI$year[idx], main="Emissions per Year", xlab="Year", ylab="log10( Emissions )", notch=TRUE )
+boxplot( log10( NEI$Emissions ) ~ NEI$year, main="Emissions per Year", xlab="Year", ylab="log10( Emissions )", notch=TRUE )
 dev.off()

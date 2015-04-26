@@ -40,17 +40,6 @@ ggplot( states, aes(factor(year), log10(Emissions)) ) +
     geom_jitter(color="grey", alpha=0.5) + 
     geom_boxplot( notch=TRUE, alpha=0.5 ) + facet_grid( .~fips ) +
     labs( x="Year" ) +
-    labs( title="Baltimore Motor Vehicle Emissions,\nBaltimore vs Los Angeles")
-
-# ggplot( states, aes(x=log10(Emissions), fill=factor(fips)) ) +
-#     geom_density(alpha=0.35) + facet_grid( .~year ) +
-#     labs( title="Baltimore Motor Vehicle Emissions, Baltimore vs Los Angeles")
-
-
-# ggplot( states, aes(x=log10(Emissions), fill=factor(fips)) ) +
-#     geom_bar(position="dodge") + facet_grid( .~year ) +
-#     labs( title="Baltimore Motor Vehicle Emissions, Baltimore vs Los Angeles")# + 
-    #theme(strip.text.x = element_text(angle=0)) +
-    #theme(strip.text.y = element_text(angle=0))
+    labs( title="Motor Vehicle Emissions,\nBaltimore vs Los Angeles")
 
 dev.off()
